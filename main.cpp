@@ -7,11 +7,11 @@
 
 using namespace std;
 
-void multiply_threading(int *a, int **b, int **mult, int x, int i){
+void multiply_threading(int a[], int b[][3], int mult[][3], int x, int i){
   for (int j=0; j< x; j++){
     int sum=0;
     for (int k=0; k< x; k++){
-      sum+=a[j] * b[j][k];
+      sum+=a[k] * b[k][j];
     }
     mult[i][j]=sum;
   }
@@ -49,6 +49,7 @@ int main(){
     for(int j = 0; j < x; ++j){
         cout << " " << mult[i][j];
       }
+      cout << endl;
     }
 
     return 0;
